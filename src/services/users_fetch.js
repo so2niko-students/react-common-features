@@ -4,10 +4,10 @@ const getAlltUsers = () => {
     return fetch(USER_URL)
         .then(r => r.json())
         .then((data) => {
-        // handle success
-        console.log(data);
-        return data;
-    });
+            // handle success
+            console.log(data);
+            return data;
+        });
 }
 
 const getUserById = (id) => {
@@ -25,7 +25,10 @@ const getUserById = (id) => {
 const createUser = (user) => {
     return fetch(USER_URL, {
         body: JSON.stringify(user),
-        method: 'post',
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
     }).then(r => r.json());
 }
 
@@ -48,7 +51,7 @@ const deleteUserById = (id) => {
     const URL = `${USER_URL}/${id}`;
     return axios.delete(URL);
 }
- 
+
 export {
     createUser,
     deleteUserById,

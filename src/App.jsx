@@ -91,7 +91,7 @@ const App = () => {
       </div>
       <div className='grid grid-cols-3 gap-3'>
         {users.length > 0 ? 
-          users.map(user => <Card user={user} key={user.id} />)
+          users.sort((a, b) => b.id - a.id).map(user => <Card user={user} key={user.id} />)
           : null  
         }
       </div>
