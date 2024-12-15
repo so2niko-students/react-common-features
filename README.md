@@ -17,4 +17,6 @@ Javascript Core.
 Library
 
 
-TODO: forms, xmlhttprequest, fetch, tailwindcss  
+TODO: forms, xmlhttprequest, tailwindcss, fetch-post ( content-length to mockapi)  
+
+

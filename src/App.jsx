@@ -1,20 +1,30 @@
 import { useState } from 'react'
-import { createUser, getAlltUsers, getUserById, updateUser, deleteUserById } from './services/users';
+import { 
+  createUser, 
+  getAlltUsers, 
+  getUserById, 
+  updateUser, 
+  deleteUserById 
+} from './services/users_fetch';
+
+import { 
+  // createUser, 
+} from './services/users';
 
 import Card from './components/card';
 import './App.css';
 
 const newUser = {
-  "login": "randomLogin",
-  "name": "Random",
-  "surname": "User",
-  "password": "123456",
-  "role": "Admin",
+  "login": "111",
+  "name": "222",
+  "surname": "333",
+  "password": "444",
+  "role": "user",
   "status": "Main",
   "email": "random@gmail.com",
   "phone": "1-574-723-1294",
   "country": "Ghana",
-  "city": "Port Noelialand",
+  "city": "555",
   "avatar": "https://cdn.fakercloud.com/avatars/marrimo_128.jpg"
 };
 
@@ -35,7 +45,7 @@ const App = () => {
   const handleClickAddRandomUser = () => {
     createUser(newUser).then(r => {
       console.log(r)
-      setUserId(r.data.id);
+      setUserId(r.id);
     });
   }
 
@@ -60,6 +70,9 @@ const App = () => {
 
   return (
     <>
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
     <div>
       <p className='text-red-600'>Users: {users.length}</p>
       </div>
@@ -76,7 +89,7 @@ const App = () => {
         <button onClick={handleClickUpdateUser}>Update user</button>
         <button onClick={handleClickDeleteUser}>Delete user</button>
       </div>
-      <div className='flex'>
+      <div className='grid grid-cols-3 gap-3'>
         {users.length > 0 ? 
           users.map(user => <Card user={user} key={user.id} />)
           : null  
