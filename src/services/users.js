@@ -37,6 +37,20 @@ const deleteUserById = (id) => {
     const URL = `${USER_URL}/${id}`;
     return axios.delete(URL);
 }
+
+const sendFile = (file) => {
+    const fData = new FormData();
+    fData.append('files', file);
+    axios({
+        method: 'post',
+        url: 'url for file',
+        body: fData,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    }).then(r => console.log(r));
+}
+
  
 export {
     createUser,
@@ -44,4 +58,5 @@ export {
     getAlltUsers,
     getUserById,
     updateUser,
+    sendFile,
 }
