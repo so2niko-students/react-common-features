@@ -1,21 +1,8 @@
-## 1
+### 2025-02-23 plan
 
-### XmlHttpRequest
-
-Callback based 
-
-## 2
-
-### Fetch
-
-Javascript Core. 
-
-## 3
-
-### Axios
-
-Library
-
-TODO: xmlhttprequest
-
-
+[x] add router
+[x] alternative image preview
+[?] stream file upload FE
+[?] stream file upload BE
+[] state management (redux + useContext)
+[] text editor plugin

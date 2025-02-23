@@ -40,7 +40,7 @@ const deleteUserById = (id) => {
 
 const sendFile = (file) => {
     const fData = new FormData();
-    fData.append('files', file);
+    fData.append('file', file);
     axios({
         method: 'post',
         url: 'url for file',
