@@ -3,6 +3,6 @@
 [x] add router
 [x] alternative image preview
 [?] stream file upload FE
-[?] stream file upload BE
+[x] stream file upload BE
 [] state management (redux + useContext)
 [] text editor plugin
